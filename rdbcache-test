@@ -1,0 +1,45 @@
+#/bin/bash
+
+start_id=$(./yii test-start)
+
+if [ $? -ne 0 ]; then
+
+echo $start_id
+
+else
+
+./yii test-get
+
+./yii test-get2
+
+./yii test-set
+
+./yii test-set2
+
+./yii test-put
+
+./yii test-getset
+
+./yii test-minus-expire
+
+./yii test-pull
+
+./yii test-push
+
+./yii test-delkey
+
+./yii test-delall
+
+./yii test-employees
+
+./yii test-select
+
+./yii test-select-pull
+
+./yii test-save
+
+./yii test-save-pull
+
+./yii test-end $start_id
+
+fi
