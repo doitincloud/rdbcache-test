@@ -24,7 +24,6 @@ class TestStartController extends TestController
             $tables = $conn->schema->getTableNames();
             $missing_tables = "";
             foreach ($tables_needed as $table_needed) {
-                echo $tables_needed . "\n";
                 $hasIt = false;
                 foreach($tables as $table) {
                     if ($table == $table_needed) {
@@ -42,7 +41,7 @@ class TestStartController extends TestController
             }
         } catch (\yii\db\Exception $e) {
             echo "failed to connect to database";
-            echo $e->errorMessage();
+            echo $e->code;
             exit(1);
         }
 

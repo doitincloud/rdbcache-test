@@ -53,7 +53,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
         
@@ -90,7 +90,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
 
@@ -140,7 +140,7 @@ class TestMinusExpireController extends TestController
                 ->send();
 
             if (!$response->isOk) {
-                $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+                $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
                 return;
             }
 
@@ -168,7 +168,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
 
@@ -204,7 +204,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
         
@@ -241,7 +241,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
 
@@ -291,7 +291,7 @@ class TestMinusExpireController extends TestController
                 ->send();
 
             if (!$response->isOk) {
-                $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+                $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
                 return;
             }
 
@@ -319,7 +319,7 @@ class TestMinusExpireController extends TestController
             ->send();
 
         if (!$response->isOk) {
-            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message']);
+            $this->failed(basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data));
             return;
         }
 

@@ -499,7 +499,7 @@ class TestController extends Controller
             ->send();
 
         if (!$response->isOk) {
-            $this->failed($fileline.": Failed! " . $response->data['message']);
+            $this->failed($fileline.": Failed! " . json_encode($response->data));
             return;
         }
 

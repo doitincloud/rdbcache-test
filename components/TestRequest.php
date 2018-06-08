@@ -32,18 +32,18 @@ class TestRequest extends Request {
                 ->addHeaders(['Authorization' => 'Basic '.
                     base64_encode(
                         Yii::$app->params['oauth2server_client_id'].':'.
-                        Yii::$app->params['oauth2server_client_password'])]
+                        Yii::$app->params['oauth2server_client_secret'])]
                     )
                 ->setData([
                     'grant_type' => 'password',
                     'username' => Yii::$app->params['oauth2server_user_name'],
-                    'password' => Yii::$app->params['oauth2server_user_secret'],
+                    'password' => Yii::$app->params['oauth2server_user_password'],
                     'scope' => 'read write delete'
                 ]);
             $response = $request->send();
             
             if (!$response->isOk) {
-                $message = basename(__FILE__)."@".__LINE__.": Failed!  " . $response->data['message'];
+                $message = basename(__FILE__)."@".__LINE__.": Failed!  " . json_encode($response->data);
                 $this->stdout($message . "\n", Console::BOLD, Console::FG_RED);
                 return;
             }
