@@ -23,7 +23,7 @@ class TestRequest extends Request {
 
         $this->server = Yii::$app->params['rdbcache_server'];
         $this->server_port = Yii::$app->params['rdbcache_port'];
-        if (empty(self::$access_token)) {
+        if (empty(self::$access_token) && !empty(Yii::$app->params['oauth2server_url'])) {
             $client = new Client();
 
             $request = $client->createRequest()
